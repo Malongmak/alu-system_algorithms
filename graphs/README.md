@@ -536,8 +536,3 @@ Breadth First Traversal:
 
 Depth: 3
 alex@~/graphs$
-Repo:
-
-GitHub repository: alu-system_algorithms
-Directory: graphs
-File: 5-breadth_first_traverse.c

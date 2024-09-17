@@ -19,14 +19,22 @@ void graph_delete(graph_t *graph)
 	temp1_v = graph->vertices;
 	while (temp1_v)
 	{
-		temp2_e = temp1_e->next;
-		free(temp1_e);
-		temp1_e = temp2_e;
-	}
-	
-	free(temp1_v);
-	temp1_v = temp2_v;
-}
+		temp2_v = temp1_v->next;
 
-free(graph);
+		if (temp1_v->content)
+			free(temp1_v->content);
+
+		temp1_e = temp1_v->edges;
+		while (temp1_e)
+		{
+			temp2_e = temp1_e->next;
+			free(temp1_e);
+			temp1_e = temp2_e;
+		}
+
+		free(temp1_v);
+		temp1_v = temp2_v;
+	}
+
+	free(graph);
 }
